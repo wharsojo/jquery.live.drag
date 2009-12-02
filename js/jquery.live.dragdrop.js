@@ -163,4 +163,13 @@
     }
   }
 
+  ev.begin["abs"] = function(){
+    var src = $.liveDrag.state.src; 
+    var drg = $.liveDrag.state.drag; 
+    var css = src.offset();
+    css['margin-top' ]=0;
+    css['margin-left']=0;
+    drg.css(css);
+  }  
+  
 })(jQuery);
