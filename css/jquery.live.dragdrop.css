@@ -1,0 +1,48 @@
+body { 
+  font: 62.5% Arial, Verdana, sans-serif; 
+} 
+h1 { 
+  font-size: 2.5em; 
+  margin-bottom: 0; 
+} 
+.highlight {
+  font-style: italic;
+  border: 1px solid #888;
+  padding: 0.5em;
+  margin: 0.5em 0;
+  background-color: #ffc;
+}
+
+.live-layer{
+  position: absolute;
+  background-color: #ffe;
+  opacity:0;
+  top:0px;
+  left:0px;
+  width:100%;
+  height:100%;
+  z-index:100;
+}
+.live-drag{
+  background-color: #ffc;
+}
+.live-drag-source{
+  opacity:.5;
+}
+.live-drag-active{
+  display:block;
+  position: absolute;
+  border : solid thin red;
+  z-index: 99;
+}
+
+.live-drag-drop{
+  border : solid thin green;
+}
+
+.parent{
+  cursor:pointer;
+  font-size:14px;
+  background-color:#ccc;
+}
+

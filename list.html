@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN">
+<html>
+<head>
+<title>Drag &amp; Drop</title>
+
+<style type="text/css">
+#phonetic {
+	position: absolute;
+	left: 10px;
+	top: 10px;
+}
+
+#numeric {
+	position: absolute;
+	left: 200px;
+	top: 10px;
+	border: 1px solid white;
+}
+
+ul li {
+  background-color:#EEEEEE;
+  border:1px solid #CCCCCC;
+  cursor:move;
+  margin-bottom:4px;
+  padding:2px;
+}
+</style>
+    <link  href="css/jquery.live.dragdrop.css" type="text/css" rel="stylesheet"/>
+    <script src="js/jquery.js"           type="text/javascript"></script>
+    <script src="js/jquery.live.dragdrop.js" type="text/javascript"></script>
+    <script>
+    $(function(){
+      $('#phonetic>li').addClass('live-drag').attr('drop','#phonetic>li');
+    });
+    </script>
+</head>
+<body>
+<div class="live-drag bx1">DDDD</div>
+<ul id="phonetic" class="sortable boxy" style="margin-left: 1em;">
+	<li>Alpha<br/>OO</li>
+	<li>Bravo</li>
+	<li>Charlie</li>
+	<li>Delta</li>
+	<li>Echo</li>
+
+	<li>Foxtrot</li>
+	<li>Golf</li>
+	<li>Hotel</li>
+	<li>India</li>
+	<li>Juliet</li>
+	<li>Kilo</li>
+
+	<li>Lima</li>
+	<li>Mike</li>
+	<li>November</li>
+	<li>Oscar</li>
+	<li>Papa</li>
+	<li>Quebec</li>
+
+	<li>Romeo</li>
+	<li>Sierra</li>
+	<li>Tango</li>
+	<li>Uniform</li>
+	<li>Victor</li>
+	<li>Whiskey</li>
+
+	<li>Xray</li>
+	<li>Yankee</li>
+	<li>Zulu</li>
+</ul>
+<ul id="numeric" class="sortable boxier" style="margin-right: 1em;">
+	<li>One</li>
+	<li>Two</li>
+
+	<li>Three</li>
+	<li>Four</li>
+	<li>Five</li>
+	<li>Six</li>
+	<li>Seven</li>
+	<li>Eight</li>
+
+	<li>Nine</li>
+	<li>Ten</li>
+	<li>Eleven</li>
+	<li>Twelve</li>
+	<li>Thirteen</li>
+	<li>Fourteen</li>
+
+	<li>Fifteen</li>
+	<li>Sixteen</li>
+	<li>Seventeen</li>
+	<li>Eightteen</li>
+	<li>Nineteen</li>
+	<li>Twenty</li>
+
+</ul>
+</body>
+</html>
