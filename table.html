@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN">
+<html>
+  <head>
+    <title>Drag &amp; Drop</title>
+    <link  href="css/jquery.live.dragdrop.css" type="text/css" rel="stylesheet"/>
+    <script src="js/jquery.js"           type="text/javascript"></script>
+    <script src="js/jquery.live.dragdrop.js" type="text/javascript"></script>
+    <style>
+      .live-drag-drop {background:yellow;}
+      td{width:100px;}
+    </style>
+    <script>
+      function dragCombine(xS,xT){
+        var src=   $.liveDrag.state.src;
+        var tgt= $($.liveDrag.state.drop);
+        var txt= src.text();
+        src.html('' ).removeClass('live-drag').addClass(   xS);
+        tgt.html(txt).addClass(   'live-drag').removeClass(xT);
+        
+        /*setTimeout(function(){ $.liveDrag.state.drops.removeClass('live-drag-drop'); },100);*/
+      }
+      $(function(){
+        $.liveDrag.event.end.picked  = function(){ dragCombine('drop1','drop2'); }
+        $.liveDrag.event.end.restore = function(){ dragCombine('drop2','drop1'); }
+      });
+    </script>
+  </head>
+  <body>
+    <div class="bx1">INFO:<br/></div>
+    <table border=1>
+      <tr><td>Src1</td>   <td class="live-drag x" act="clone" drop=".drop2" end="restore">Alpha</td></tr>
+      <tr><td>Src2</td>   <td class="live-drag x" act="clone" drop=".drop2" end="restore">Beta</td></tr>
+      <tr><td>Src3</td>   <td class="live-drag x" act="clone" drop=".drop2" end="restore">Gama</td></tr>
+    </table>
+    <table border=1>
+      <tr><td>Target1</td><td class="drop2" act="clone" drop=".drop1" end="picked"></td></tr>
+      <tr><td>Target2</td><td class="drop2" act="clone" drop=".drop1" end="picked"></td></tr>
+    </table>
+  </body>
+</html>

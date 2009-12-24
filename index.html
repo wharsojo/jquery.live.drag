@@ -21,19 +21,32 @@
     .dp1{top:300px;left:100px;}
     .dp2{top:300px;left:600px;}
     </style>
+    <script>
+      $.liveDrag.event.stop = function(){
+        var xx= $('div.dp1');
+        var dg= $.liveDrag.state.drag;
+        xx.html(xx.html()+'<br/>stop:'+dg.text());
+      }
+      $.liveDrag.event.end.info1 = function(){
+        return false;
+      }
+      $.liveDrag.event.end.info2 = function(){
+        return true;
+      }
+    </script>
   </head>
 
   <body>   
     <div class="bx1">
       <div class="live-drag parent">Title</div>
-      by whats?by me
+      First Window Alpha
     </div>
     <div class="bx2" act="clone" drop=".droped">
       <div class="live-drag parent">Title</div>
-      by whats?
+      Second Window Beta
     </div>
     <h1>Mirror on the wall</h1>
-    <div class="live-drop droped dp1">DROP</div>
-    <div class="live-drop droped dp2">DROP2</div>
+    <div class="droped dp1 live-drag" end="info1">DODOL</div>
+    <div class="droped dp2"           end="info2">GARUT</div>
   </body>
 </html>
